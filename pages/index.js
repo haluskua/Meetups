@@ -24,14 +24,30 @@ function HomePage(props) {
   return <MeetupList meetups={props.meetups} />;
 }
 
-// code executed during build process
-export async function getStaticProps() {
+//Runs on the server after deployment
+export async function getServerSideProps(context) {
+  const req = context.req;
+  const res = context.res;
   // fetch data from an API
+  //RUNS ONLY ON SERVER
   return {
     props: {
       meetups: DUMMY_MEETUPS,
     },
   };
 }
+
+//-------------------
+// code executed during build process...
+// export async function getStaticProps() {
+//   // fetch data from an API...
+//   return {
+//     props: {
+//       meetups: DUMMY_MEETUPS,
+//     },
+//     revalidate: 1,
+//   };
+// }
+//-----------------
 
 export default HomePage;
