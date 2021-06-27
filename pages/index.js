@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "next/Head";
 import { Fragment } from "react";
 import MeetupList from "../components/meetups/MeetupList";
 
