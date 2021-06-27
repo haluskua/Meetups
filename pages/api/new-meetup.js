@@ -6,7 +6,7 @@ import { MongoClient } from "mongodb";
 
 // /api/new-meetup
 
-function handler(req, res) {
+async function handler(req, res) {
   if (req.method === "POST") {
     const data = req.body;
 
@@ -14,7 +14,7 @@ function handler(req, res) {
     //store them in a database
 
     const client = await MongoClient.connect(
-      "mongodb+srv://ompa:L7ks69mP4GWJBb7d@cluster0.vkje7.mongodb.net/meetUps?retryWrites=true&w=majority"
+      "mongodb+srv://ompa:tAMplYbZrNcq4LAc@cluster0.pjpgz.mongodb.net/meetups?retryWrites=true&w=majority"
     );
     const db = client.db();
 
